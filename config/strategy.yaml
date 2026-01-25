@@ -1,0 +1,5 @@
+initial_state: "idle"
+states:
+  - "idle"
+transitions: []
+final_states: []

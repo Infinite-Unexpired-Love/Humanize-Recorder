@@ -1,0 +1,21 @@
+{
+  "scheduler": {
+    "interval_ms": 1000,
+    "max_retries": 3,
+    "error_action": "retry"
+  },
+  "signal_source": "config/signal_source.yaml",
+  "strategy": "config/strategy.yaml",
+  "turns": {
+    "FirstRound": "config/turns/first_round.yaml",
+    "SecondRound": "config/turns/second_round.yaml"
+  },
+  "action": {
+    "driver": "PyAutoGUIDriver",
+    "humanization": {
+      "enabled": false
+    },
+    "safety_delay": 50,
+    "min_mouse_duration": 0.1
+  }
+}
