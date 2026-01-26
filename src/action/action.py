@@ -52,7 +52,7 @@ class Action:
         start_time = time.monotonic()
         success = True
         for idx, (px, py) in enumerate(points):
-            success = self.driver.move_to(px, py, duration=0) and success
+            success = self.driver.move_to(px, py) and success
             if idx < len(points) - 1:
                 self._sleep_with_stop(step_sleep)
         elapsed = time.monotonic() - start_time
@@ -83,13 +83,13 @@ class Action:
 
     def mouse_down(self, button: str = "left", duration: float = 0.05) -> bool:
         duration = self._normalize_mouse_duration(duration)
-        success = self.driver.mouse_down(button=button.lower(), duration=0)
+        success = self.driver.mouse_down(button=button.lower())
         self._sleep_with_stop(duration)
         return success
 
     def mouse_up(self, button: str = "left", duration: float = 0.02) -> bool:
         duration = self._normalize_mouse_duration(duration)
-        success = self.driver.mouse_up(button=button.lower(), duration=0)
+        success = self.driver.mouse_up(button=button.lower())
         self._sleep_with_stop(duration)
         return success
 
