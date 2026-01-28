@@ -1,7 +1,5 @@
 """
 动作执行模块 - 支持多驱动、拟人化、循环任务管理
-Author: Senior Python Automation Engineer
-Version: 1.0.0
 """
 
 import random
