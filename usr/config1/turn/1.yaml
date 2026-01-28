@@ -1,0 +1,31 @@
+actions:
+  - device: mouse
+    event: move
+    position: [500, 300]
+    duration: 1000
+    delay: [200, 0, 100]
+
+  - device: mouse
+    event: click
+    position: [500, 300]
+    button: left
+    duration: 500
+    delay: 100
+
+  - device: task
+    event: start_loop
+    task_name: auto_clicker
+    task_params:
+      fn_name: click
+      interval: 1000
+      jitter: 100
+      x: 100
+      y: 200
+      button: left
+
+  - device: null
+    delay: 5000
+
+  - device: task
+    event: stop_loop
+    task_name: auto_clicker
